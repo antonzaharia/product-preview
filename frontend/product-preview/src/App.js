@@ -15,11 +15,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.props.loading ? "Loading" : ""}
         <div className="container secondary-color">
           <h1 className="display-4">Product Preview</h1>
           <p className="lead">by Anton Zaharia</p>
           <hr className="my-4" />
+
+          {this.props.loading ? "Loading..." : ""}
           <form>
             <div className="select-div">
               <input
