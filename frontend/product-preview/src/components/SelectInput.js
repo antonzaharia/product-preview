@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SelectInput({ name, image }) {
+export default function SelectInput({ name, image, handleSelect }) {
   const makeName = () => {
     let nameArr = name.split("").splice(1, name.length - 1);
     return `${name[0].toUpperCase()}${nameArr.join("")}`;
@@ -13,7 +13,7 @@ export default function SelectInput({ name, image }) {
           alt={name}
         />
       </label>
-      <input type="radio" name="shape" id={name} />
+      <input type="radio" name="shape" id={name} onChange={handleSelect} />
       <label htmlFor={name}>{makeName()}</label>
     </div>
   );
