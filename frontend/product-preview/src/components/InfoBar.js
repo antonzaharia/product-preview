@@ -5,22 +5,22 @@ import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 export default function InfoBar({ upload, shape, preview }) {
   return (
     <div className="info-bar">
-      <div className="infobar-element">
+      <div className="info-bar-element">
         <p>Upload {upload ? upload : "--"}</p>
         <p>Product Options {shape ? shape : "--"}</p>
         <p>View {preview ? preview : "--"}</p>
       </div>
-      <div className="infobar-element">
+      <div className="info-bar-element">
         <div>
-          <p className={upload ? "step-done" : "step"}>UPLOAD IMAGE</p>
+          <p className={upload ? "step step-done" : "step"}>UPLOAD IMAGE</p>
           {upload ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
         </div>
         <div>
-          <p className={shape ? "step-done" : "step"}>SELECT PRODUCT</p>
+          <p className={shape ? "step step-done" : "step"}>SELECT PRODUCT</p>
           {shape ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
         </div>
         <div>
-          <p className={preview ? "step-done" : "step"}>PREVIEW</p>
+          <p className={preview ? "step step-done" : "step"}>PREVIEW</p>
           {preview ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
         </div>
       </div>

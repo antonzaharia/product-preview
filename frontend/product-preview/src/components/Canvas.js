@@ -5,7 +5,9 @@ export default function Canvas({ pictureId }) {
   return (
     <Image
       style={{
-        "text-align": "center",
+        textAlign: "center",
+        width: "250px",
+        minHeight: "300px",
       }}
       cloudName="picfair-test"
       publicId={pictureId.split(".")[0]}

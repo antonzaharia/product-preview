@@ -8,6 +8,15 @@ export function loadProducts() {
       .then((data) => dispatch({ type: "LOAD_PRODUCTS", payload: data }));
   };
 }
+export function markAsDone(name, data) {
+  return (dispatch) => {
+    if (name === "upload") {
+      dispatch({ type: "UPLOAD_DONE", payload: data });
+    } else if (name === "shape") {
+      dispatch({ type: "SHAPE_DONE", payload: data });
+    }
+  };
+}
 export function uploadPicture(file) {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
@@ -19,8 +28,8 @@ export function uploadPicture(file) {
         "https://api.cloudinary.com/v1_1/picfair-test/image/upload",
         formData
       )
-      .then((response) =>
-        dispatch({ type: "UPLOADED", payload: response.data.public_id })
-      );
+      .then((response) => {
+        dispatch({ type: "UPLOADED", payload: response.data });
+      });
   };
 }
