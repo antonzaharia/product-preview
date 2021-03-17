@@ -26,9 +26,11 @@ code {
   color: #293241;
 }
 .custom-button.btn {
-  background-color: #293241;
+  background-color: black;
   color: #FFF;
   border: none;
+  border-radius: 0;
+  width: 300px;
 }
 .custom-button.btn:hover {
   color: #FFF !important;
@@ -49,16 +51,30 @@ code {
   width: 100%;
   opacity: 0.4;
 }
-
+.main-container {
+  width: 100%;
+}
+.content-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.select-div {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+.info-bar {
+  background-color: rgb(238, 238, 238);;
+  height: 100px;
+  width: 35%;
+  flex-shrink: 0.5;
+}
 .shape-select-container {
   display: flex;
   justify-content: space-between;
 }
-.select-div {
-border: 1px solid black;
-padding: 10px;
-text-align: center;
-}
+
 .select-div img {
 height: 200px;
 width: 200px;
@@ -66,4 +82,8 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 width: 80%;
+}
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
 }
