@@ -25,6 +25,10 @@ code {
 .secondary-color {
   color: #293241;
 }
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
 .custom-button.btn {
   background-color: black;
   color: #FFF;
@@ -35,6 +39,13 @@ code {
 .custom-button.btn:hover {
   color: #FFF !important;
   border: none;
+}
+.back-button.btn{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0;
+  width: 100px;
 }
 .hero {
   width: 100vw;
@@ -53,6 +64,7 @@ code {
 }
 .main-container {
   width: 100%;
+  padding: 0;
 }
 .content-container {
   width: 100%;
@@ -63,12 +75,38 @@ code {
   padding: 10px;
   text-align: center;
   width: 100%;
+  min-width: 300px;
+}
+.select-div form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 500px;
+}
+.select-div form input {
+  align-self: center;
+}
+.select-div form button {
+  align-self: center;
 }
 .info-bar {
   background-color: rgb(238, 238, 238);;
   height: 100px;
   width: 35%;
-  flex-shrink: 0.5;
+  height: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.infobar-element {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.infobar-element p {
+  margin-right: 10px;
 }
 .shape-select-container {
   display: flex;
@@ -83,7 +121,10 @@ margin-left: auto;
 margin-right: auto;
 width: 80%;
 }
-.buttons-container {
-  display: flex;
-  justify-content: flex-end;
+
+.step {
+  display: inline-block;
+}
+.step-done {
+  display: inline-block;
 }

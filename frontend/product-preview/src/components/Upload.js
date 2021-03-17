@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import { connect } from "react-redux";
 import { uploadPicture } from "../actions/ProductActions";
+import { Link } from "react-router-dom";
 
 class Upload extends Component {
   handleUpload = (event) => {
@@ -19,15 +20,19 @@ class Upload extends Component {
           onChange={this.handleUpload}
           accept="image/png, image/jpeg"
         />
-
-        <button onClick={this.handleUploadClick}>
+        <div>
           {this.props.publicId ? (
             <CheckCircleIcon style={{ color: "green", marginRight: "10px" }} />
           ) : (
             ""
           )}
-          Upload
-        </button>
+        </div>
+        <button onClick={this.handleUploadClick}>Upload</button>
+        <div className="buttons-container">
+          <Link to="/select-shape" className="btn btn-lg custom-button">
+            Next
+          </Link>
+        </div>
       </>
     );
   }
