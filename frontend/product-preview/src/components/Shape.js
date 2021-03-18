@@ -19,6 +19,7 @@ class Shape extends Component {
     this.props.markAsDone("shape", event.target.id);
   };
 
+  handleSelectNext = () => {};
   render() {
     return (
       <>
@@ -36,7 +37,11 @@ class Shape extends Component {
           <Link to="/" className="btn btn-lg back-button">
             Back
           </Link>
-          <Link to="/preview" className="btn btn-lg custom-button">
+          <Link
+            to="/preview"
+            className="btn btn-lg custom-button"
+            onClick={this.handleSelectNext}
+          >
             Next
           </Link>
         </div>

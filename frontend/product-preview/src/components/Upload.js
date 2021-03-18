@@ -3,6 +3,7 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import { connect } from "react-redux";
 import { markAsDone, uploadPicture } from "../actions/ProductActions";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 class Upload extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Upload extends Component {
           ) : (
             ""
           )}
+          {this.props.loading ? <Loading /> : ""}
         </div>
         <button onClick={this.handleUploadClick}>Upload</button>
         <div className="buttons-container">
