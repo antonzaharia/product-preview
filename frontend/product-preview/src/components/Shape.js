@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { loadProducts, markAsDone } from "../actions/ProductActions";
+import {
+  loadProducts,
+  makeProduct,
+  markAsDone,
+} from "../actions/ProductActions";
 import SelectInput from "./SelectInput";
 
 class Shape extends Component {
@@ -19,7 +23,14 @@ class Shape extends Component {
     this.props.markAsDone("shape", event.target.id);
   };
 
-  handleSelectNext = () => {};
+  handleSelectNext = () => {
+    let data = {
+      publicId: this.props.publicId,
+      scale: 2,
+      size: "90x50",
+    };
+    this.props.makeProduct(data);
+  };
   render() {
     return (
       <>
@@ -52,9 +63,11 @@ class Shape extends Component {
 const mapStateToProps = (state) => ({
   products: state.products,
   loading: state.loading,
+  publicId: state.publicId,
 });
 const mapDispatchToProps = (dispatch) => ({
   loadProducts: () => dispatch(loadProducts()),
   markAsDone: (name, data) => dispatch(markAsDone(name, data)),
+  makeProduct: (data) => dispatch(makeProduct(data)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Shape);

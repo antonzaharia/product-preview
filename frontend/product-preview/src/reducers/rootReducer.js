@@ -30,6 +30,9 @@ export default function rootReducer(
         ...state,
         completed: { ...state.completed, shape: action.payload },
       };
+    case "MAKE_PRODUCT":
+      console.log(action.payload);
+      return state;
     default:
       return state;
   }
