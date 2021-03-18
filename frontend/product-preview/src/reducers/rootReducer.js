@@ -30,7 +30,7 @@ export default function rootReducer(
         ...state,
         completed: { ...state.completed, shape: action.payload },
       };
-    case "MAKE_PRODUCT":
+    case "ADD_FRAME":
       console.log(action.payload);
       return state;
     default:

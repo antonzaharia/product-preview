@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  loadProducts,
-  makeProduct,
-  markAsDone,
-} from "../actions/ProductActions";
+import { loadProducts, addFrame, markAsDone } from "../actions/ProductActions";
 import SelectInput from "./SelectInput";
 
 class Shape extends Component {
@@ -29,7 +25,7 @@ class Shape extends Component {
       scale: 2,
       size: "90x50",
     };
-    this.props.makeProduct(data);
+    this.props.addFrame(data);
   };
   render() {
     return (
@@ -68,6 +64,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   loadProducts: () => dispatch(loadProducts()),
   markAsDone: (name, data) => dispatch(markAsDone(name, data)),
-  makeProduct: (data) => dispatch(makeProduct(data)),
+  addFrame: (data) => dispatch(addFrame(data)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Shape);

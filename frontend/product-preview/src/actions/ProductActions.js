@@ -33,9 +33,9 @@ export function uploadPicture(file) {
       });
   };
 }
-export function makeProduct(data) {
+export function addFrame(data) {
   return (dispatch) => {
-    fetch("http://localhost:3001/make-product", {
+    fetch("http://localhost:3001/add-frame", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -45,6 +45,8 @@ export function makeProduct(data) {
       }),
     })
       .then((resp) => resp.json())
-      .then((data) => dispatch({ type: "MAKE_PRODUCT", payload: data }));
+      .then((data) => {
+        return dispatch({ type: "ADD_FRAME", payload: data });
+      });
   };
 }
