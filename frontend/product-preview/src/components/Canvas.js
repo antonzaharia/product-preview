@@ -10,7 +10,7 @@ export default function Canvas({ pictureId }) {
         minHeight: "300px",
       }}
       cloudName="picfair-test"
-      publicId={pictureId.split(".")[0]}
+      publicId={pictureId}
       variables={[
         ["$w", "300"],
         ["$h", "500"],
