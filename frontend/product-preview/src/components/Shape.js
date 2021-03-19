@@ -22,8 +22,8 @@ class Shape extends Component {
   handleSelectNext = () => {
     let data = {
       publicId: this.props.publicId,
-      scale: 2,
       size: "90x50",
+      orientation: "portrait",
     };
     this.props.addFrame(data);
   };

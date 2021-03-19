@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
     end
 
     def add_frame
-        link = Product.new.add_frame(params[:publicId], params[:scale], params[:size])
+        links = Product.new.add_frame(params[:publicId], params[:size], params[:orientation])
 
-        render json: { link: link }
+        render json: { link: links }
     end
 end

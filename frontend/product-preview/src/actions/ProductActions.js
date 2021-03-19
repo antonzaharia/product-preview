@@ -35,13 +35,14 @@ export function uploadPicture(file) {
 }
 export function addFrame(data) {
   return (dispatch) => {
+    console.log(data);
     fetch("http://localhost:3001/add-frame", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         publicId: data.publicId,
-        scale: data.scale,
         size: data.size,
+        orientation: data.orientation,
       }),
     })
       .then((resp) => resp.json())
