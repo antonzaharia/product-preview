@@ -35,8 +35,11 @@ class App extends Component {
               </Route>
             </Router>
           </form>
-          {console.log(this.state)}
-          <InfoBar upload={this.props.fileName} shape={this.props.shape} />
+          <InfoBar
+            upload={this.props.fileName}
+            shape={this.props.shape}
+            preview={this.props.view}
+          />
         </div>
         <footer></footer>
       </div>
@@ -47,5 +50,6 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   fileName: state.fileName,
   shape: state.completed.shape,
+  view: state.completed.view,
 });
 export default connect(mapStateToProps)(App);

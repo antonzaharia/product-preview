@@ -16,7 +16,7 @@ export default function InfoBar({ upload, shape, preview }) {
       <div className="info-bar-element">
         <p>Upload {upload ? `- ${trimUploadName()}` : "--"}</p>
         <p>Product Options {shape ? `- ${shape}` : "--"}</p>
-        <p>View {preview ? `- ${preview}` : "--"}</p>
+        <p>View {preview ? `- ${preview} Preview Pictures` : "--"}</p>
       </div>
       <div className="info-bar-element">
         <div>

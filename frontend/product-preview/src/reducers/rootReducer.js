@@ -4,7 +4,7 @@ export default function rootReducer(
     products: [],
     publicId: null,
     images: [],
-    completed: { upload: null, shape: null },
+    completed: { upload: null, shape: null, view: null },
   },
   action
 ) {
@@ -31,9 +31,21 @@ export default function rootReducer(
         completed: { ...state.completed, shape: action.payload },
       };
     case "CLEAN_LINKS":
-      return { ...state, links: [] };
+      return {
+        ...state,
+        links: [],
+        completed: { ...state.completed, view: null },
+      };
     case "MAKE_PRODUCT":
-      return { ...state, links: action.payload.link, loading: false };
+      return {
+        ...state,
+        links: action.payload.link,
+        loading: false,
+        completed: {
+          ...state.completed,
+          view: action.payload.link ? action.payload.link.length : 0,
+        },
+      };
     default:
       return state;
   }

@@ -10,4 +10,16 @@ class ProductsController < ApplicationController
 
         render json: { link: links }
     end
+
+    def add_print
+        links = Product.new.add_print(params[:publicId], params[:size], params[:orientation])
+
+        render json: { link: links }
+    end
+
+    def add_canvas
+        links = Product.new.add_canvas(params[:publicId], params[:size], params[:orientation])
+
+        render json: { link: links }
+    end
 end
