@@ -96,7 +96,11 @@ code {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+.select-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
 .select-div img {
   height: 200px;
   width: 200px;
@@ -111,6 +115,12 @@ code {
 }
 .step-done {
   font-weight: bold;
+}
+.preview-image {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 90%;
 }
 footer {
   background-color: black;

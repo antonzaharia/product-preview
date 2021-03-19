@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { loadProducts, addFrame, markAsDone } from "../actions/ProductActions";
+import {
+  loadProducts,
+  makeProduct,
+  markAsDone,
+} from "../actions/ProductActions";
 import SelectInput from "./SelectInput";
 
 class Shape extends Component {
@@ -9,7 +13,7 @@ class Shape extends Component {
     super(props);
     this.state = {
       shape: "",
-      size: "",
+      size: "20x25.5",
     };
   }
   setOrientation = (size) => {
@@ -28,8 +32,9 @@ class Shape extends Component {
       publicId: this.props.publicId,
       size: this.state.size,
       orientation: this.setOrientation(this.state.size),
+      shape: this.state.shape,
     };
-    this.props.addFrame(data);
+    this.props.makeProduct(data);
   };
   handleSize = (event) => {
     this.setState({ size: event.target.value });
@@ -52,7 +57,7 @@ class Shape extends Component {
             <option value="20x25.5">20cm x 25.5cm</option>
             <option value="30x40">30cm x 40cm</option>
             <option value="30x45">30cm x 45cm</option>
-            <option value="18x13">18cm x 13cm</option>
+            <option value="50x90">50cm x 90cm</option>
             <option value="40x30">40cm x 30cm</option>
             <option value="50x40">50cm x 40cm</option>
             <option value="90x50">90cm x 50cm</option>
@@ -82,6 +87,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   loadProducts: () => dispatch(loadProducts()),
   markAsDone: (name, data) => dispatch(markAsDone(name, data)),
-  addFrame: (data) => dispatch(addFrame(data)),
+  makeProduct: (data) => dispatch(makeProduct(data)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Shape);

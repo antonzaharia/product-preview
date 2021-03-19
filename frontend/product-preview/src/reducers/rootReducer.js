@@ -3,6 +3,7 @@ export default function rootReducer(
     loading: false,
     products: [],
     publicId: null,
+    images: [],
     completed: { upload: null, shape: null },
   },
   action
@@ -20,7 +21,6 @@ export default function rootReducer(
         fileName: action.payload.original_filename,
       };
     case "UPLOAD_DONE":
-      console.log("reducer", action.payload);
       return {
         ...state,
         completed: { ...state.completed, upload: action.payload },
@@ -30,9 +30,10 @@ export default function rootReducer(
         ...state,
         completed: { ...state.completed, shape: action.payload },
       };
-    case "ADD_FRAME":
-      console.log(action.payload);
-      return state;
+    case "CLEAN_LINKS":
+      return { ...state, links: [] };
+    case "MAKE_PRODUCT":
+      return { ...state, links: action.payload.link, loading: false };
     default:
       return state;
   }
