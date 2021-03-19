@@ -9,8 +9,12 @@ class Shape extends Component {
     super(props);
     this.state = {
       shape: "",
+      size: "",
     };
   }
+  setOrientation = (size) => {
+    return size.split("x")[0] > size.split("x")[1] ? "landscape" : "portrait";
+  };
   componentDidMount() {
     this.props.loadProducts();
   }
@@ -22,10 +26,13 @@ class Shape extends Component {
   handleSelectNext = () => {
     let data = {
       publicId: this.props.publicId,
-      size: "90x50",
-      orientation: "portrait",
+      size: this.state.size,
+      orientation: this.setOrientation(this.state.size),
     };
     this.props.addFrame(data);
+  };
+  handleSize = (event) => {
+    this.setState({ size: event.target.value });
   };
   render() {
     return (
@@ -39,6 +46,17 @@ class Shape extends Component {
               handleSelect={this.handleSelect}
             />
           ))}
+        </div>
+        <div className="select-container">
+          <select name="size" id="size" onChange={this.handleSize}>
+            <option value="20x25.5">20cm x 25.5cm</option>
+            <option value="30x40">30cm x 40cm</option>
+            <option value="30x45">30cm x 45cm</option>
+            <option value="18x13">18cm x 13cm</option>
+            <option value="40x30">40cm x 30cm</option>
+            <option value="50x40">50cm x 40cm</option>
+            <option value="90x50">90cm x 50cm</option>
+          </select>
         </div>
         <div className="buttons-container">
           <Link to="/" className="btn btn-lg back-button">

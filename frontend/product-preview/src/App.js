@@ -22,21 +22,19 @@ class App extends Component {
         </header>
         {this.props.loading ? "Loading..." : ""}
         <div className="content-container">
-          <div className="select-div">
-            <form>
-              <Router>
-                <Route exact path="/">
-                  <Upload />
-                </Route>
-                <Route exact path="/select-shape">
-                  <Shape />
-                </Route>
-                <Route exact path="/preview">
-                  <Preview />
-                </Route>
-              </Router>
-            </form>
-          </div>
+          <form>
+            <Router>
+              <Route exact path="/">
+                <Upload />
+              </Route>
+              <Route exact path="/select-shape">
+                <Shape />
+              </Route>
+              <Route exact path="/preview">
+                <Preview />
+              </Route>
+            </Router>
+          </form>
           {console.log(this.state)}
           <InfoBar upload={this.props.fileName} shape={this.props.shape} />
         </div>
