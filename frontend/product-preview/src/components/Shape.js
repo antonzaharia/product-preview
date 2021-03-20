@@ -54,13 +54,13 @@ class Shape extends Component {
         </div>
         <div className="select-container">
           <select name="size" id="size" onChange={this.handleSize}>
-            <option value="20x25.5">20cm x 25.5cm</option>
-            <option value="30x40">30cm x 40cm</option>
-            <option value="30x45">30cm x 45cm</option>
-            <option value="50x90">50cm x 90cm</option>
-            <option value="40x30">40cm x 30cm</option>
-            <option value="50x40">50cm x 40cm</option>
-            <option value="90x50">90cm x 50cm</option>
+            <option value="20x25.5">20cm x 25.5cm - Portrait</option>
+            <option value="30x40">30cm x 40cm - Portrait</option>
+            <option value="30x45">30cm x 45cm - Portrait</option>
+            <option value="50x90">50cm x 90cm - Portrait</option>
+            <option value="40x30">40cm x 30cm - Landscape</option>
+            <option value="50x40">50cm x 40cm - Landscape</option>
+            <option value="90x50">90cm x 50cm - Landscape</option>
           </select>
         </div>
         <div className="buttons-container">
