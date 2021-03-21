@@ -13,7 +13,7 @@ class Shape extends Component {
     super(props);
     this.state = {
       shape: "",
-      size: "20x25.5",
+      size: "30x40",
     };
   }
   setOrientation = (size) => {

@@ -7,11 +7,6 @@ import Shape from "./components/Shape";
 import Preview from "./components/Preview";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <div className="main-container">

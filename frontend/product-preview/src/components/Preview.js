@@ -34,8 +34,6 @@ class Preview extends Component {
   }
 }
 const mapStateToProps = (state) => ({
-  completed: state.completed,
-  publicId: state.publicId,
   links: state.links,
   loading: state.loading,
 });
