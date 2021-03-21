@@ -22,7 +22,7 @@ class Upload extends Component {
   };
   render() {
     return (
-      <>
+      <div className="upload-container">
         <h4>Select a Image to create a product.</h4>
         <input
           type="file"
@@ -46,7 +46,7 @@ class Upload extends Component {
         {this.props.fileName
           ? this.props.markAsDone("upload", this.props.fileName)
           : console.log("no file yet")}
-      </>
+      </div>
     );
   }
 }

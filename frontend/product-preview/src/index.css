@@ -23,6 +23,15 @@ code {
 .secondary-color {
   color: #293241;
 }
+.upload-container {
+  text-align: center;
+}
+.upload-container input {
+  margin: 30px;
+}
+.upload-container button {
+  margin: 30px;
+}
 .buttons-container {
   display: flex;
   justify-content: space-around;
