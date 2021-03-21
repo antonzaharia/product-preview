@@ -48,13 +48,13 @@ class Shape extends Component {
             <SelectInput
               key={product.id}
               name={product.name}
+              image={product.url}
               handleSelect={this.handleSelect}
             />
           ))}
         </div>
         <div className="select-container">
           <select name="size" id="size" onChange={this.handleSize}>
-            <option value="20x25.5">20cm x 25.5cm - Portrait</option>
             <option value="30x40">30cm x 40cm - Portrait</option>
             <option value="30x45">30cm x 45cm - Portrait</option>
             <option value="50x90">50cm x 90cm - Portrait</option>
