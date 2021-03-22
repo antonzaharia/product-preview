@@ -5,11 +5,6 @@
 This is demo of prints preview in different shapes: Canvas Wraps, Giclee Art Prints and Framed Prints.
 The app was created using Ruby on Rails as backend and React as frontend.
 
-# User Options
-
-To use the app from the user point of view
-It allows the user to also choose the desired orientation (landscape or portrait) and the desired size and return
-
 # Installation
 
 Clone this repository by typing in your terminal: "git clone https://github.com/antonzaharia/product-preview.git"
