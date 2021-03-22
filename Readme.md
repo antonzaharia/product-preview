@@ -19,16 +19,19 @@ now type: "cd product-preview" to open the main directory.
 
 type: "cd backend/product-preview" to access the Ruby on Rails app
 In your terminal, run 'bundle install' to install all required gems.
+
 than type: 'rails db:migrate', type 'rails db:seed' to fill up the database with 3 products (canvas, giclee and frame) and 10 backgrounds that have different attributes already saved to match the products.
 
 # Frontend
 
 From the main directory of the app, in your terminal, type: "cd frontend/product-preview" to access the React app.
+
 In your terminal, run 'npm install' to install all required npm packages.
 
 # How to run the program
 
 From the main directory "cd backend/product-preview" and run in the terminal: "rails server -p 3001" to start the server.
+
 From the main directory "cd frontend/product-preview" and run in another terminal: "npm start" to start the npm server.
 Visit 'http://localhost:3000' to see the homepage.
 
